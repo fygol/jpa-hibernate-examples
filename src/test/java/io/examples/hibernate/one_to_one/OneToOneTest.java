@@ -15,5 +15,11 @@ public class OneToOneTest extends AbstractTest {
 
             em.persist(post);
         });
+
+        transaction(em -> {
+            em.createQuery("select pd from PostDetails pd where pd.post.id = :postId", PostDetails.class)
+                    .setParameter("postId", 1L)
+                    .getResultList();
+        });
     }
 }

@@ -7,9 +7,10 @@
 
     <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <!--<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>-->
+            <property name="javax.persistence.jdbc.driver" value="com.p6spy.engine.spy.P6SpyDriver"/>
             <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:~/tmp/jpa"/>-->
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test_db;DB_CLOSE_DELAY=-1;LOCK_TIMEOUT=10000"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:p6spy:h2:mem:test_db;DB_CLOSE_DELAY=-1;LOCK_TIMEOUT=10000"/>
             <property name="javax.persistence.jdbc.user" value="user"/>
             <property name="javax.persistence.jdbc.password" value="password"/>
             <!--<property name="javax.persistence.lock.timeout" value="10000"/>-->
